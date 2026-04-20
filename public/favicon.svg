@@ -1,4 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#3b77f8"/>
-  <text x="32" y="44" font-family="Inter,sans-serif" font-size="28" font-weight="800" fill="white" text-anchor="middle">iW</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="waveGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#1f1f1f"/>
+      <stop offset="50%" stop-color="#8b7355"/>
+      <stop offset="100%" stop-color="#fbab2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="#ffffff"/>
+  <path d="M 60 320 Q 110 120 170 320 T 280 320 T 390 320 T 460 250"
+        fill="none" stroke="url(#waveGrad)" stroke-width="44"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="170" cy="160" r="6" fill="#fbab2b"/>
 </svg>

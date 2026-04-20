@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="logoWave" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#1f1f1f"/>
+      <stop offset="45%" stop-color="#8b7355"/>
+      <stop offset="100%" stop-color="#fbab2b"/>
+    </linearGradient>
+  </defs>
+  <!-- Wave mark -->
+  <g transform="translate(10 40)">
+    <path d="M 10 110 Q 40 -10 75 110 T 140 110 T 205 110"
+          fill="none" stroke="url(#logoWave)" stroke-width="22"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="75" cy="30" r="8" fill="#fbab2b"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="240" y="115" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="700" fill="#0f172a" letter-spacing="-2">
+    iwebtronix
+  </text>
+  <text x="240" y="155" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="400" fill="#0f172a" letter-spacing="6">
+    WE DESIGN YOUR BUSINESS
+  </text>
+</svg>

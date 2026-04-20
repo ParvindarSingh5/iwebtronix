@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="markWave" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#1f1f1f"/>
+      <stop offset="45%" stop-color="#8b7355"/>
+      <stop offset="100%" stop-color="#fbab2b"/>
+    </linearGradient>
+  </defs>
+  <path d="M 20 130 Q 55 -5 95 130 T 170 130 T 230 90"
+        fill="none" stroke="url(#markWave)" stroke-width="26"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="95" cy="30" r="9" fill="#fbab2b"/>
+</svg>
