@@ -41,8 +41,9 @@ jobs:
           chmod 600 ~/.netrc
           lftp -c "
           set ftp:ssl-allow no;
-          set ftp:passive-mode no;
+          set ftp:passive-mode yes;
           set ftp:prefer-epsv no;
+          set ftp:fix-pasv-address yes;
           set net:timeout 60;
           set net:max-retries 5;
           open ftp://$FTP_SERVER;
