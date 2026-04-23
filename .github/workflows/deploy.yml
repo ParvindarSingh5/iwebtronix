@@ -1,4 +1,4 @@
-name: Deploy to MilesWeb
+name: Deploy to Netlify
 
 on:
   push:
@@ -25,16 +25,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy via FTP to MilesWeb
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          protocol: ftp
-          local-dir: ./dist/
-          server-dir: public_html/
-          dangerous-clean-slate: true
-          timeout: 60000
-          retries: 5
+      - name: Deploy to Netlify
+        run: npx netlify-cli deploy --prod --dir=dist
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
