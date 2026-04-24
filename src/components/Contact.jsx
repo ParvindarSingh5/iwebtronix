@@ -6,10 +6,16 @@ export default function Contact() {
 
   const handle = e => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const submit = e => {
+  const submit = async e => {
     e.preventDefault()
-    const body = `Name: ${form.name}%0D%0APhone: ${form.phone}%0D%0AService: ${form.service}%0D%0A%0D%0A${form.message}`
-    window.location.href = `mailto:info@iwebtronix.com?subject=Project Enquiry from ${form.name}&body=${body}`
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        'form-name': 'contact',
+        ...form,
+      }).toString(),
+    })
     setSent(true)
   }
 
@@ -38,8 +44,8 @@ export default function Contact() {
               {
                 icon: (<svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>),
                 label: 'Email',
-                val: 'info@iwebtronix.com',
-                href: 'mailto:info@iwebtronix.com',
+                val: 'iwebtronix@gmail.com',
+                href: 'mailto:iwebtronix@gmail.com',
               },
               {
                 icon: (<svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>),
@@ -93,7 +99,9 @@ export default function Contact() {
               <div className="text-ink-500 mt-2">We'll reply within 24 hours.</div>
             </div>
           ) : (
-            <form onSubmit={submit} className="bg-white rounded-3xl p-8 space-y-4 text-ink-700 shadow-2xl">
+            <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submit} className="bg-white rounded-3xl p-8 space-y-4 text-ink-700 shadow-2xl">
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="bot-field" />
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-ink-500 mb-1.5 uppercase tracking-wide">Full Name *</label>
