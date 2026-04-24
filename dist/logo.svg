@@ -1,23 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 220" preserveAspectRatio="xMidYMid meet">
   <defs>
-    <linearGradient id="logoWave" x1="0%" y1="50%" x2="100%" y2="50%">
-      <stop offset="0%" stop-color="#1f1f1f"/>
-      <stop offset="45%" stop-color="#8b7355"/>
-      <stop offset="100%" stop-color="#fbab2b"/>
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2e2e2e"/>
+      <stop offset="50%" stop-color="#9b7a3a"/>
+      <stop offset="100%" stop-color="#f5a623"/>
+    </linearGradient>
+    <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#555555"/>
+      <stop offset="50%" stop-color="#b8913f"/>
+      <stop offset="100%" stop-color="#f5a623"/>
     </linearGradient>
   </defs>
-  <!-- Wave mark -->
-  <g transform="translate(10 40)">
-    <path d="M 10 110 Q 40 -10 75 110 T 140 110 T 205 110"
-          fill="none" stroke="url(#logoWave)" stroke-width="22"
-          stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="75" cy="30" r="8" fill="#fbab2b"/>
-  </g>
-  <!-- Wordmark -->
-  <text x="240" y="115" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="700" fill="#0f172a" letter-spacing="-2">
-    iwebtronix
-  </text>
-  <text x="240" y="155" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="400" fill="#0f172a" letter-spacing="6">
-    WE DESIGN YOUR BUSINESS
-  </text>
+
+  <!-- Wave mark: back layer (offset shadow) -->
+  <path d="M 30 168 C 44 168 52 44 80 44 C 108 44 116 168 140 168 C 164 168 172 28 202 28 C 222 28 234 100 244 168"
+        fill="none" stroke="url(#waveGrad2)" stroke-width="17" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- Wave mark: front main path -->
+  <path d="M 14 168 C 28 168 36 40 64 40 C 92 40 100 168 124 168 C 148 168 156 22 186 22 C 208 22 220 98 230 168"
+        fill="none" stroke="url(#waveGrad)" stroke-width="20" stroke-linecap="round"/>
+
+  <!-- Orange dots at peaks -->
+  <circle cx="64"  cy="34" r="9" fill="#f5a623"/>
+  <circle cx="186" cy="16" r="9" fill="#f5a623"/>
+
+  <!-- "iwebtronix" bold text -->
+  <text x="262" y="148"
+        font-family="Inter, 'Arial Black', Arial, sans-serif"
+        font-size="96" font-weight="900"
+        fill="#111111" letter-spacing="-2">iwebtronix</text>
+
+  <!-- Orange dot over the 'i' tittle -->
+  <circle cx="280" cy="34" r="8" fill="#f5a623"/>
+
+  <!-- Orange dot near top-right of 'x' -->
+  <circle cx="840" cy="34" r="8" fill="#f5a623"/>
+
+  <!-- Tagline -->
+  <text x="263" y="188"
+        font-family="Inter, Arial, sans-serif"
+        font-size="17" font-weight="400"
+        fill="#666666" letter-spacing="8">WE DESIGN YOUR BUSINESS</text>
 </svg>
