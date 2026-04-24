@@ -8,13 +8,10 @@ export default function Contact() {
 
   const submit = async e => {
     e.preventDefault()
-    await fetch('/', {
+    await fetch('https://formspree.io/f/mkokkldl', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({
-        'form-name': 'contact',
-        ...form,
-      }).toString(),
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(e.target),
     })
     setSent(true)
   }
@@ -99,9 +96,7 @@ export default function Contact() {
               <div className="text-ink-500 mt-2">We'll reply within 24 hours.</div>
             </div>
           ) : (
-            <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={submit} className="bg-white rounded-3xl p-8 space-y-4 text-ink-700 shadow-2xl">
-              <input type="hidden" name="form-name" value="contact" />
-              <input type="hidden" name="bot-field" />
+            <form onSubmit={submit} className="bg-white rounded-3xl p-8 space-y-4 text-ink-700 shadow-2xl">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-ink-500 mb-1.5 uppercase tracking-wide">Full Name *</label>
